@@ -12,12 +12,18 @@ const GitHubContainer: React.FC<Props> = props => {
   const [gitHubUser, setGitHubUser] = useState();
 
   useEffect(() => {
+    let isCurrent = true;
     if (userId) {
       fetch(`${URL_PREFIX}/${userId}`)
         .then(response => response.json())
         .then((result) => {
-          setGitHubUser(result)
+          if (isCurrent) {
+            setGitHubUser(result)
+          }
         });
+    }
+    return () => {
+      isCurrent = false;
     }
   }, [userId]);
 

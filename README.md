@@ -14,3 +14,4 @@ See [Create React App](https://github.com/facebook/create-react-app).
 * Simple prop component
 * Simple form
 * useEffect to retrieve the content and display response. (ignoring errors)
+* Add example to handle race conditions.
